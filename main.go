@@ -8,6 +8,7 @@ import (
 )
 
 func main() {
+	URL := "http://clock.meaningful-godiva.koyeb:8000"
 	duration := time.Minute * 1
 	timer := time.NewTicker(duration)
 
@@ -16,11 +17,11 @@ func main() {
 	for {
 		select {
 		case <-timer.C:
-			resp, err := http.Get("http://clock.meaningful-godiva.koyeb:8000")
+			resp, err := http.Get(URL)
 			if err == nil {
 				b, err := io.ReadAll(resp.Body)
 				if err == nil {
-					fmt.Println(resp.Status)
+					fmt.Printf("Call : %s, status code : %s\n", URL, resp.Status)
 					fmt.Printf("%s\n", string(b))
 				} else {
 					fmt.Println(err)
