@@ -6,12 +6,15 @@ import (
 )
 
 func main() {
-	timer := time.NewTicker(time.Second * 5)
+	duration := time.Second * 5
+	timer := time.NewTicker(duration)
+
+	fmt.Printf("Starting a tick every %s\n", duration)
 
 	for {
 		select {
 		case v := <-timer.C:
-			fmt.Println(v)
+			fmt.Println(v.Format("2006-02-01 15:04:05"))
 		}
 	}
 }
