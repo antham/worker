@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	duration := time.Second * 5
+	duration := time.Minute * 1
 	timer := time.NewTicker(duration)
 
 	fmt.Printf("Starting a tick every %s\n", duration)
