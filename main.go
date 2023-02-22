@@ -9,7 +9,7 @@ import (
 
 func main() {
 	URL := "http://clock.meaningful-godiva.koyeb:8000"
-	duration := time.Minute * 1
+	duration := time.Minute * 10
 	timer := time.NewTicker(duration)
 
 	fmt.Printf("Starting a tick every %s\n", duration)
