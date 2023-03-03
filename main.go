@@ -4,11 +4,12 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+	"os"
 	"time"
 )
 
 func main() {
-	URL := "http://clock.meaningful-godiva.koyeb:8000"
+	URL := os.Getenv("CLOCK_URL")
 	duration := time.Minute * 10
 	timer := time.NewTicker(duration)
 
